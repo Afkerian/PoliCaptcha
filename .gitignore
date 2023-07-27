@@ -11,6 +11,8 @@ enviroment/*
 
 #dataset
 QRs/*.jpg
+QRs/*.Identifier
+
 # Distribution / packaging
 .Python
 build/
