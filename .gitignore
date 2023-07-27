@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+#enviroment
+enviroment/*
+
+#dataset
+QRs/*.jpg
 # Distribution / packaging
 .Python
 build/
