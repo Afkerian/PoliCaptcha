@@ -1,8 +1,7 @@
 import cv2
 from pyzbar.pyzbar import decode
 
-def read_qr_code(image_path):
-    image = cv2.imread(image_path)
+def read_qr_code(image):
     decoded_objects = decode(image)
     
     if not decoded_objects:
@@ -32,7 +31,7 @@ def parse_qr_data(qr_data):
         "PERIODO ACTIVO": periodo_activo
     }
 
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     PATH_QR_1 = "../QRs/qr_rocha_richard.jpg"
     imagen_codigo_qr = PATH_QR_1
     
@@ -46,4 +45,4 @@ if __name__ == "__main__":
         if parsed_data:
             print("\nInformación estructurada:")
             for key, value in parsed_data.items():
-                print(f"{key}: {value}")
+                print(f"{key}: {value}")"""
