@@ -1,5 +1,6 @@
-import cv2
+import chardet
 from pyzbar.pyzbar import decode
+import cv2
 
 def read_qr_code(image):
     decoded_objects = decode(image)
@@ -8,8 +9,17 @@ def read_qr_code(image):
         print("No se encontró ningún código QR en la imagen.")
         return None
     
-    qr_data = decoded_objects[0].data.decode('utf-8', 'ignore')
+    # Obtener la data cruda (bytes)
+    raw_data = decoded_objects[0].data
+
+    # Detectar la codificación
+    detected_encoding = chardet.detect(raw_data)
+    
+    # Decodificar usando la codificación detectada
+    qr_data = raw_data.decode(detected_encoding['encoding'])
+
     return qr_data
+
 
 def parse_qr_data(qr_data):
     data_parts = qr_data.split('/')
