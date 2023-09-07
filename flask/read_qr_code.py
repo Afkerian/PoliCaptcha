@@ -7,7 +7,7 @@ def read_qr_code(image):
     
     if not decoded_objects:
         print("No se encontró ningún código QR en la imagen.")
-        return None
+        return "NO es un QR VALIDO"
     
     # Obtener la data cruda (bytes)
     raw_data = decoded_objects[0].data
@@ -27,7 +27,7 @@ def parse_qr_data(qr_data):
     # Verificar que haya al menos 4 partes en los datos (código, nombres, carrera, periodo)
     if len(data_parts) < 4:
         print("Datos del código QR incompletos o en un formato no esperado.")
-        return None
+        return "NO es un QR VALIDO"
     
     codigo_unico = data_parts[0]
     nombres = data_parts[1]

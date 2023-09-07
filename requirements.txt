@@ -5,3 +5,7 @@ numpy
 pandas
 qrtools
 chardet
+pyTelegramBotAPI
+transformers
+#tensorflow
+#torch

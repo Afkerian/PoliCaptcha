@@ -8,6 +8,8 @@ __pycache__/
 
 #enviroment
 enviroment/*
+flask/*.jpg
+*.properties
 
 #dataset
 QRs/*.jpg
